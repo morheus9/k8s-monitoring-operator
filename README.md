@@ -12,7 +12,7 @@ ______________________________________________________________________
 ```
 go install sigs.k8s.io/controller-runtime/tools/setup-envtest@latest
 
-kubebuilder init --domain example.com --repo github.com/morheus9/k8s-monitoring-operator
+kubebuilder init --domain example.com --repo github.com/morheus9/auto-observability-k8s-operator
 kubebuilder create api --group backup --version v1alpha1 --kind ServiceMonitoring
 ```
 - controller-gen

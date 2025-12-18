@@ -1,4 +1,4 @@
-module github.com/morheus9/k8s-monitoring-operator
+module github.com/morheus9/auto-observability-k8s-operator
 
 go 1.24.6
 

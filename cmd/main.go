@@ -35,8 +35,8 @@ import (
 	metricsserver "sigs.k8s.io/controller-runtime/pkg/metrics/server"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 
-	backupv1alpha1 "github.com/morheus9/k8s-monitoring-operator/api/v1alpha1"
-	"github.com/morheus9/k8s-monitoring-operator/internal/controller"
+	backupv1alpha1 "github.com/morheus9/auto-observability-k8s-operator/api/v1alpha1"
+	"github.com/morheus9/auto-observability-k8s-operator/internal/controller"
 	// +kubebuilder:scaffold:imports
 )
 

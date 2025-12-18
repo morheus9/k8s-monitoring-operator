@@ -6,8 +6,8 @@ cliVersion: 4.10.1
 domain: example.com
 layout:
 - go.kubebuilder.io/v4
-projectName: k8s-monitoring-operator
-repo: github.com/morheus9/k8s-monitoring-operator
+projectName: auto-observability-k8s-operator
+repo: github.com/morheus9/auto-observability-k8s-operator
 resources:
 - api:
     crdVersion: v1
@@ -16,6 +16,6 @@ resources:
   domain: example.com
   group: backup
   kind: ServiceMonitoring
-  path: github.com/morheus9/k8s-monitoring-operator/api/v1alpha1
+  path: github.com/morheus9/auto-observability-k8s-operator/api/v1alpha1
   version: v1alpha1
 version: "3"

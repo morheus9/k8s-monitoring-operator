@@ -27,7 +27,7 @@ import (
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	backupv1alpha1 "github.com/morheus9/k8s-monitoring-operator/api/v1alpha1"
+	backupv1alpha1 "github.com/morheus9/auto-observability-k8s-operator/api/v1alpha1"
 )
 
 var _ = Describe("ServiceMonitoring Controller", func() {

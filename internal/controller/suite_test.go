@@ -32,7 +32,7 @@ import (
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	backupv1alpha1 "github.com/morheus9/k8s-monitoring-operator/api/v1alpha1"
+	backupv1alpha1 "github.com/morheus9/auto-observability-k8s-operator/api/v1alpha1"
 	// +kubebuilder:scaffold:imports
 )
 

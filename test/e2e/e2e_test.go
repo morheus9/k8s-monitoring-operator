@@ -30,20 +30,20 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	"github.com/morheus9/k8s-monitoring-operator/test/utils"
+	"github.com/morheus9/auto-observability-k8s-operator/test/utils"
 )
 
 // namespace where the project is deployed in
-const namespace = "k8s-monitoring-operator-system"
+const namespace = "auto-observability-k8s-operator-system"
 
 // serviceAccountName created for the project
-const serviceAccountName = "k8s-monitoring-operator-controller-manager"
+const serviceAccountName = "auto-observability-k8s-operator-controller-manager"
 
 // metricsServiceName is the name of the metrics service of the project
-const metricsServiceName = "k8s-monitoring-operator-controller-manager-metrics-service"
+const metricsServiceName = "auto-observability-k8s-operator-controller-manager-metrics-service"
 
 // metricsRoleBindingName is the name of the RBAC that will be created to allow get the metrics data
-const metricsRoleBindingName = "k8s-monitoring-operator-metrics-binding"
+const metricsRoleBindingName = "auto-observability-k8s-operator-metrics-binding"
 
 var _ = Describe("Manager", Ordered, func() {
 	var controllerPodName string
@@ -176,7 +176,7 @@ var _ = Describe("Manager", Ordered, func() {
 		It("should ensure the metrics endpoint is serving metrics", func() {
 			By("creating a ClusterRoleBinding for the service account to allow access to metrics")
 			cmd := exec.Command("kubectl", "create", "clusterrolebinding", metricsRoleBindingName,
-				"--clusterrole=k8s-monitoring-operator-metrics-reader",
+				"--clusterrole=auto-observability-k8s-operator-metrics-reader",
 				fmt.Sprintf("--serviceaccount=%s:%s", namespace, serviceAccountName),
 			)
 			_, err := utils.Run(cmd)
