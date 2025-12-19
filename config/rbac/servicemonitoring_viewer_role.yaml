@@ -1,7 +1,7 @@
 # This rule is not used by the project auto-observability-k8s-operator itself.
 # It is provided to allow the cluster admin to help manage permissions for users.
 #
-# Grants read-only access to backup.example.com resources.
+# Grants read-only access to app.example.com resources.
 # This role is intended for users who need visibility into these resources
 # without permissions to modify them. It is ideal for monitoring purposes and limited-access viewing.
 
@@ -14,7 +14,7 @@ metadata:
   name: servicemonitoring-viewer-role
 rules:
 - apiGroups:
-  - backup.example.com
+  - app.example.com
   resources:
   - servicemonitorings
   verbs:
@@ -22,7 +22,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - backup.example.com
+  - app.example.com
   resources:
   - servicemonitorings/status
   verbs:

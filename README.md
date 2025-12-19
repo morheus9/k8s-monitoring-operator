@@ -12,7 +12,7 @@ ______________________________________________________________________
 go install sigs.k8s.io/controller-runtime/tools/setup-envtest@latest
 
 kubebuilder init --domain example.com --repo github.com/morheus9/auto-observability-k8s-operator
-kubebuilder create api --group backup --version v1alpha1 --kind ServiceMonitoring
+kubebuilder create api --group app --version v1alpha1 --kind ServiceMonitoring --resource --controller
 ```
 - controller-gen
 ```
@@ -34,7 +34,7 @@ make generate
 ```
 make manifests
 ```
-### 3. Check build
+### 3. Build
 ```
 make build
 ```
@@ -48,9 +48,10 @@ make run
 ```
 ##### Checking
 ```
-kubectl get crd | grep backupschedule
+kubectl get crd | grep 
 ```
 
 make generate
 make manifests
-make run
+make build
+make install

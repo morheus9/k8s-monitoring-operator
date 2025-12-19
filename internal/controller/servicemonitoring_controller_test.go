@@ -27,7 +27,7 @@ import (
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	backupv1alpha1 "github.com/morheus9/auto-observability-k8s-operator/api/v1alpha1"
+	appv1alpha1 "github.com/morheus9/auto-observability-k8s-operator/api/v1alpha1"
 )
 
 var _ = Describe("ServiceMonitoring Controller", func() {
@@ -40,13 +40,13 @@ var _ = Describe("ServiceMonitoring Controller", func() {
 			Name:      resourceName,
 			Namespace: "default", // TODO(user):Modify as needed
 		}
-		servicemonitoring := &backupv1alpha1.ServiceMonitoring{}
+		servicemonitoring := &appv1alpha1.ServiceMonitoring{}
 
 		BeforeEach(func() {
 			By("creating the custom resource for the Kind ServiceMonitoring")
 			err := k8sClient.Get(ctx, typeNamespacedName, servicemonitoring)
 			if err != nil && errors.IsNotFound(err) {
-				resource := &backupv1alpha1.ServiceMonitoring{
+				resource := &appv1alpha1.ServiceMonitoring{
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      resourceName,
 						Namespace: "default",
@@ -59,7 +59,7 @@ var _ = Describe("ServiceMonitoring Controller", func() {
 
 		AfterEach(func() {
 			// TODO(user): Cleanup logic after each test, like removing the resource instance.
-			resource := &backupv1alpha1.ServiceMonitoring{}
+			resource := &appv1alpha1.ServiceMonitoring{}
 			err := k8sClient.Get(ctx, typeNamespacedName, resource)
 			Expect(err).NotTo(HaveOccurred())
 

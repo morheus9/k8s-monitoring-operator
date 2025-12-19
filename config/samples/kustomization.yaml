@@ -1,4 +1,4 @@
 ## Append samples of your project ##
 resources:
-- backup_v1alpha1_servicemonitoring.yaml
+  - app_v1alpha1_servicemonitoring.yaml
 # +kubebuilder:scaffold:manifestskustomizesamples

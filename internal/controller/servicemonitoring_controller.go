@@ -24,7 +24,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 
-	backupv1alpha1 "github.com/morheus9/auto-observability-k8s-operator/api/v1alpha1"
+	appv1alpha1 "github.com/morheus9/auto-observability-k8s-operator/api/v1alpha1"
 )
 
 // ServiceMonitoringReconciler reconciles a ServiceMonitoring object
@@ -33,9 +33,9 @@ type ServiceMonitoringReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-// +kubebuilder:rbac:groups=backup.example.com,resources=servicemonitorings,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=backup.example.com,resources=servicemonitorings/status,verbs=get;update;patch
-// +kubebuilder:rbac:groups=backup.example.com,resources=servicemonitorings/finalizers,verbs=update
+// +kubebuilder:rbac:groups=app.example.com,resources=servicemonitorings,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:groups=app.example.com,resources=servicemonitorings/status,verbs=get;update;patch
+// +kubebuilder:rbac:groups=app.example.com,resources=servicemonitorings/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
@@ -57,7 +57,7 @@ func (r *ServiceMonitoringReconciler) Reconcile(ctx context.Context, req ctrl.Re
 // SetupWithManager sets up the controller with the Manager.
 func (r *ServiceMonitoringReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
-		For(&backupv1alpha1.ServiceMonitoring{}).
+		For(&appv1alpha1.ServiceMonitoring{}).
 		Named("servicemonitoring").
 		Complete(r)
 }

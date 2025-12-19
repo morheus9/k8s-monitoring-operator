@@ -1,4 +1,4 @@
-apiVersion: backup.example.com/v1alpha1
+apiVersion: app.example.com/v1alpha1
 kind: ServiceMonitoring
 metadata:
   labels:
