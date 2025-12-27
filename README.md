@@ -51,6 +51,8 @@ make run
 kubectl get crd | grep 
 ```
 
+PS
+```
 make generate
 make manifests
 make build
@@ -62,4 +64,4 @@ kubectl apply -k config/samples/
 make uninstall
 make undeploy IMG=morheus/observability-operator:0.0.1
 kubectl apply -k config/samples/
-
+```
