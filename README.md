@@ -48,7 +48,7 @@ make run
 ```
 ##### Checking
 ```
-kubectl get crd | grep 
+kubectl get crd | grep
 ```
 
 PS

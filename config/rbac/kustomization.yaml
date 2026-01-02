@@ -25,4 +25,3 @@ resources:
 - servicemonitoring_admin_role.yaml
 - servicemonitoring_editor_role.yaml
 - servicemonitoring_viewer_role.yaml
-
