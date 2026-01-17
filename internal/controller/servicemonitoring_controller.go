@@ -31,8 +31,8 @@ type ServiceMonitoringReconciler struct {
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.22.4/pkg/reconcile
 func (r *ServiceMonitoringReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
-	_ = logf.FromContext(ctx)
-
+	logger := logf.FromContext(ctx)
+	logger.Info("Start Reconciler")
 	// TODO(user): your logic here
 
 	return ctrl.Result{}, nil
